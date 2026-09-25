@@ -7,6 +7,37 @@
 use soroban_sdk::{contracterror, contracttype, symbol_short, Address, Env, String, Symbol, Vec};
 use grainlify_core::CorrelationId;
 
+// Event topics and registry key shared by the contract implementation.
+// These were inadvertently dropped while resolving the split-types merge.
+pub const PROGRAM_INITIALIZED: Symbol = symbol_short!("PrgInit");
+pub const FUNDS_LOCKED: Symbol = symbol_short!("FndsLock");
+pub const BATCH_FUNDS_LOCKED: Symbol = symbol_short!("BatLck");
+pub const BATCH_FUNDS_RELEASED: Symbol = symbol_short!("BatRel");
+pub const BATCH_PAYOUT: Symbol = symbol_short!("BatchPay");
+pub const PAYOUT: Symbol = symbol_short!("Payout");
+pub const PROGRAM_PUBLISHED: Symbol = symbol_short!("PrgPub");
+pub const EVENT_VERSION_V2: u32 = 2;
+pub const PAUSE_STATE_CHANGED: Symbol = symbol_short!("PauseSt");
+pub const PAUSE_STATE_CHANGED_V2: Symbol = symbol_short!("PauseStV2");
+pub const AUTO_UNPAUSE: Symbol = symbol_short!("AutoUnpse");
+pub const MAINTENANCE_MODE_CHANGED: Symbol = symbol_short!("MaintSt");
+pub const PROGRAM_RISK_FLAGS_UPDATED: Symbol = symbol_short!("pr_risk");
+pub const PROGRAM_REGISTRY: Symbol = symbol_short!("ProgReg");
+pub const PROGRAM_REGISTERED: Symbol = symbol_short!("ProgRgd");
+pub const RELEASE_SCHEDULED: Symbol = symbol_short!("RelSched");
+pub const SCHEDULE_RELEASED: Symbol = symbol_short!("SchRel");
+pub const PROGRAM_DELEGATE_SET: Symbol = symbol_short!("PrgDlgS");
+pub const PROGRAM_DELEGATE_REVOKED: Symbol = symbol_short!("PrgDlgR");
+pub const PROGRAM_METADATA_UPDATED: Symbol = symbol_short!("PrgMeta");
+pub const ADMIN_PROPOSED: Symbol = symbol_short!("AdmProp");
+pub const ADMIN_ACCEPTED: Symbol = symbol_short!("AdmAcc");
+pub const ADMIN_ROTATION_CANCELLED: Symbol = symbol_short!("AdmCanc");
+pub const CONTROLLER_PROPOSED: Symbol = symbol_short!("CtrlProp");
+pub const CONTROLLER_ACCEPTED: Symbol = symbol_short!("CtrlAcc");
+pub const CONTROLLER_ROTATION_CANCELLED: Symbol = symbol_short!("CtrlCanc");
+pub const PRICE_UPDATED: Symbol = symbol_short!("PriceUpd");
+pub const DYNAMIC_PRICING_CONFIG_UPDATED: Symbol = symbol_short!("DynPricCg");
+
 
 
 // Storage keys
